@@ -6,64 +6,169 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Gerador de código</title>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-    <script src="js/script.js"></script>
 
   </head>
   <body>
 
-    <!--       Início topo        -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a href="#" class="navbar-brand">Gerador de Códigos</a>
-    </nav>
-    <!--        Fim topo        -->
-      
+    <header>
+      <nav class="navbar navbar-expand-md fixed-top">
 
-      <!--        Início conteudo        -->
-      <section class="d-flex">
-        <div class="container">
-          <div class="row justify-content-center align-items-center">
-            <div class="col-auto">
-                <div class="p-5 mt-5">
-                  <input id="campo-codigo" type="text" disabled class="form-control-lg text-center text-lg bg-light">
+        <a href="#" class="navbar-brand">
+          <i class="fas fa-solid fa-user-secret fa-2x"></i>
+        </a>
 
-                  <button id="gerar-codigo" type="button" class="btn btn-info btn-lg mb-2" onclick="gerarcodigo()">Gerar código</button>
-                </div>
+        <button class="navbar-toggler" data-target="#nav" data-toggle="collapse">
+          <i class="fas fa-solid fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Gerar Senha</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Consultar</a>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+    </header>
+
+    <main>
+      <section>
+
+        <!-- carousel -->
+        <div id="carousel-indicadores" class="carousel slide" data-ride="carousel">
+
+          <ol class="carousel-indicators">
+            <li class="active" data-target="#carousel-indicadores" data-slide-to="0"></li>
+            <li data-target="#carousel-indicadores" data-slide-to="1"></li>
+          </ol>
+  
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h2 class="display-4">Gerador de senhas seguras</h2>
+              <p class="d-none d-sm-block">Está com dificuldade para criar uma senha segurar, não tem problema. Nós te ajudarmos a resolver o problema.</p>
             </div>
+  
+            <div class="carousel-item">
+              <p>Está com dificuldade para criar uma senha segura, não tem problema. Nós te ajudarmos a resolver o problema.</p>
+            </div>
+  
+            <a href="#carousel-indicadores" class="carousel-control-prev" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+
+            <a href="#carousel-indicadores" class="carousel-control-next" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+
           </div>
         </div>
+        <!-- carousel -->
+        
       </section>
-      <!--        Fim conteudo        -->
 
+      <section>
+        <div class="formParaSenha">
 
-      <!--        Início rodapé        -->
-      <footer class="text-center bg-dark text-white fixed-bottom pt-2">
-        <h4>Todos os direitos reservados</h4>
-      </footer>
-      <!--        Fim rodapé        -->
+          <h3 class="mb-4">Gerar Senha</h3>
+          <form action="" method="post">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input id="name" type="text" placeholder="Nome" class="form-control">
+            </div>
 
-   
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" type="text" placeholder="Email" class="form-control">
+            </div>
 
+            <div class="form-group">
+              <label for="senha">Senha para</label>
+              <select name="tipo" id="tipo" class="form-control">
+                <option value="">Tipo</option>
+                <option value="1">Email</option>
+                <option value="2">Desktop</option>
+                <option value="3">Cartão</option>
+              </select>
+            </div>
+            
+            <button type="button" class="btn btn-block" onclick="gerarSenha()">Gerar</button>
+          </form>
 
+        </div>
+      </section>
+    </main>
 
+    <footer>
+      <div class="rodape">
+        <div>
+          <i class="fas fa-solid fa-user-secret fa-4x"></i>
+        </div>
 
+        <div class="links">
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Ajuda</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Sugestões</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contrato</a>
+            </li>
+          </ul>
+        </div>
 
+        <div class="links">
+          <i class="fab fa-brands fa-whatsapp fa-2x"></i>
+          <i class="fab fa-brands fa-instagram fa-2x"></i>
+          <i class="fab fa-brands fa-github fa-2x"></i>
+        </div>
+      </div>
+    </footer>
+    
 
+    <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a href="#" class="navbar-brand">Gerador de Códigos</a>
+    </nav>
 
+    <section class="d-flex">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-auto">
+              <div class="p-5 mt-5">
+                <input id="campo-codigo" type="text" disabled class="form-control-lg text-center text-lg bg-light">
 
+                <button id="gerar-codigo" type="button" class="btn btn-info btn-lg mb-2" onclick="gerarcodigo()">Gerar código</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <footer class="text-center bg-dark text-white fixed-bottom pt-2">
+      <h4>Todos os direitos reservados</h4>
+    </footer> -->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/script.js"></script>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
   </body>
 </html>

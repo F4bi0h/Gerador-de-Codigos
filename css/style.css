@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--second-color);
+}
+
+:root {
+    --primary-color: #121212;
+    --second-color: #04DA05;
+    --complement: rgb(30, 30, 30);
+}
+
+html, body {
+    height: 100%;
+}
+
+header nav {
+    background-color: var(--complement);
+}
+
+header nav a {
+    color: var(--second-color);
+}
+
+main {
+    height: auto;
+    background-color: var(--primary-color);
+}
+
+main section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#carousel-indicadores .carousel-item {
+    padding: 120px;
+}
+
+.formParaSenha{
+    text-align: left;
+    width: 60%;
+}
+
+.formParaSenha form input, option {
+    background: var(--complement);
+}
+
+.formParaSenha form select {
+    background: var(--complement);
+}
+
+form button {
+    background-color: var(--second-color);
+    color: var(--complement);
+}
+
+.rodape {
+    padding: 50px 25px;
+    background-color: var(--complement);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rodape ul li a{
+    color: var(--second-color);
+}
+
+.rodape .links i {
+    margin: 18px;
+}
