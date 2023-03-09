@@ -1,174 +1,92 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<head>
 
-     <!-- Font Awesome -->
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/style.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Gerador de código</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-  </head>
-  <body>
+  <link rel="stylesheet" href="css/style.css">
 
-    <header>
-      <nav class="navbar navbar-expand-md fixed-top">
+  <title>document</title>
+</head>
 
-        <a href="#" class="navbar-brand">
-          <i class="fas fa-solid fa-user-secret fa-2x"></i>
-        </a>
-
-        <button class="navbar-toggler" data-target="#nav" data-toggle="collapse">
-          <i class="fas fa-solid fa-bars"></i>
-        </button>
-
-        <div class="collapse navbar-collapse" id="nav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a href="#" class="nav-link">Gerar Senha</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Consultar</a>
-            </li>
-          </ul>
-        </div>
-
-      </nav>
-    </header>
-
-    <main>
-      <section>
-
-        <!-- carousel -->
-        <div id="carousel-indicadores" class="carousel slide" data-ride="carousel">
-
-          <ol class="carousel-indicators">
-            <li class="active" data-target="#carousel-indicadores" data-slide-to="0"></li>
-            <li data-target="#carousel-indicadores" data-slide-to="1"></li>
-          </ol>
-  
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <h2 class="display-4">Gerador de senhas seguras</h2>
-              <p class="d-none d-sm-block">Está com dificuldade para criar uma senha segurar, não tem problema. Nós te ajudarmos a resolver o problema.</p>
-            </div>
-  
-            <div class="carousel-item">
-              <p>Está com dificuldade para criar uma senha segura, não tem problema. Nós te ajudarmos a resolver o problema.</p>
-            </div>
-  
-            <a href="#carousel-indicadores" class="carousel-control-prev" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </a>
-
-            <a href="#carousel-indicadores" class="carousel-control-next" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </a>
-
-          </div>
-        </div>
-        <!-- carousel -->
-        
-      </section>
-
-      <section>
-        <div class="formParaSenha">
-
-          <h3 class="mb-4">Gerar Senha</h3>
-          <form action="" method="post">
-            <div class="form-group">
-              <label for="name">Nome</label>
-              <input id="name" type="text" placeholder="Nome" class="form-control">
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input id="email" type="text" placeholder="Email" class="form-control">
-            </div>
-
-            <div class="form-group">
-              <label for="senha">Senha para</label>
-              <select name="tipo" id="tipo" class="form-control">
-                <option value="">Tipo</option>
-                <option value="1">Email</option>
-                <option value="2">Desktop</option>
-                <option value="3">Cartão</option>
-              </select>
-            </div>
-            
-            <button type="button" class="btn btn-block" onclick="gerarSenha()">Gerar</button>
-          </form>
-
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="rodape">
-        <div>
-          <i class="fas fa-solid fa-user-secret fa-4x"></i>
-        </div>
-
-        <div class="links">
-          <ul class="navbar-nav ">
-            <li class="nav-item">
-              <a href="#" class="nav-link">Ajuda</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Sugestões</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Contrato</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="links">
-          <i class="fab fa-brands fa-whatsapp fa-2x"></i>
-          <i class="fab fa-brands fa-instagram fa-2x"></i>
-          <i class="fab fa-brands fa-github fa-2x"></i>
-        </div>
-      </div>
-    </footer>
-    
-
-    <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a href="#" class="navbar-brand">Gerador de Códigos</a>
+<body>
+  <header>
+    <nav class="navbar navbar-expand">
+      <a href="#" class="navbar-brand">
+        <i class="fas fa-solid fa-key"></i>
+      </a>
     </nav>
+  </header>
 
-    <section class="d-flex">
-      <div class="container">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-auto">
-              <div class="p-5 mt-5">
-                <input id="campo-codigo" type="text" disabled class="form-control-lg text-center text-lg bg-light">
+  <div class="all-container">
+    <div class="area-generator">
+      <div class="title-generator">
+        <h2>Gerador de senhas</h2>
+        <p>Ferramenta para gerar senhas seguras. O gerador permite criar uma senha aleatória com diversas opções.</p>
+      </div>
 
-                <button id="gerar-codigo" type="button" class="btn btn-info btn-lg mb-2" onclick="gerarcodigo()">Gerar código</button>
-              </div>
+      <div class="form-generator">
+        <form action="" method="post">
+          <fieldset>Opções:</fieldset>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="letras">
+            <label for="letras" class="form-check-label">
+              Incluir Letras
+            </label>
           </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="caracter">
+            <label for="letras" class="form-check-label">
+              Incluir Caracteres
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="numeros">
+            <label for="numeros" class="form-check-label">
+              Incluir Números
+            </label>
+          </div>
+
+          <button type="button" class="btn btn-success">
+            <i class="fas fa-sync-alt"></i>
+            Gerar
+          </button>
+        </form>
+
+        <div class="password-generator">
+          <h4>Minha Senha:</h4>
+          <input type="text" disabled class="form-control" id="my-password">
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <footer class="text-center bg-dark text-white fixed-bottom pt-2">
-      <h4>Todos os direitos reservados</h4>
-    </footer> -->
+  <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+  <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 
-    <script src="js/script.js"></script>
+</body>
 
-    <!-- JavaScript (Opcional) -->
-    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-  </body>
 </html>

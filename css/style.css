@@ -1,75 +1,125 @@
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    color: var(--second-color);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 :root {
-    --primary-color: #121212;
-    --second-color: #04DA05;
-    --complement: rgb(30, 30, 30);
+    --primary-color: #2C3333;
+    --second-color: #395B64;
+    --third-color: #A5C9CA;
+    --fourth-color: #e4edeb;
 }
 
-html, body {
+html, body{
     height: 100%;
 }
 
+/* TOPO */
 header nav {
-    background-color: var(--complement);
+    background: var(--second-color);
 }
 
-header nav a {
-    color: var(--second-color);
+header nav i {
+    color: var(--third-color);
+    animation: spinLogo 8s ease-in-out infinite;
 }
 
-main {
-    height: auto;
-    background-color: var(--primary-color);
+@keyframes spinLogo {
+    0%,
+    15%,
+    25%,
+    37%,
+    68%,
+    98% {
+        transform: rotate(360deg);
+    }
+    15%,
+    98% {
+        color: var(--fourth-color);
+    }
 }
 
-main section {
-    height: 100vh;
+/* CONTAINER */
+.all-container {
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: var(--fourth-color);
+}
+
+/* ÁREA DO GERADOR DE SENHAS */
+.area-generator {
+    height: 75vh;
+    width: 45%;
+    padding: 15px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 1px var(--primary-color);
+    margin-bottom: 75px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-generator{
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.form-generator{
+    height: 60%;
+    width: 60%;
+    padding: 15px;
+    display: flex;
+    align-items: left;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 45px;
+}
+
+form {
+    margin-bottom: 45px;
+}
+
+.password-generator {
+    margin-top: 25px;
+}
+
+.password-generator input {
+    box-shadow: 0 0 2px var(--primary-color);
+    color: #2C3333;
     text-align: center;
 }
 
-#carousel-indicadores .carousel-item {
-    padding: 120px;
+@media screen and (max-width: 820px){
+    .title-generator h2 {
+        font-size: 22px;
+    }
+    .title-generator p {
+        font-size: 14px;
+    }
+    .form-generator{
+        width: 70%;
+    }
+    .area-generator {
+        width: 70%;
+    }
 }
 
-.formParaSenha{
-    text-align: left;
-    width: 60%;
-}
-
-.formParaSenha form input, option {
-    background: var(--complement);
-}
-
-.formParaSenha form select {
-    background: var(--complement);
-}
-
-form button {
-    background-color: var(--second-color);
-    color: var(--complement);
-}
-
-.rodape {
-    padding: 50px 25px;
-    background-color: var(--complement);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.rodape ul li a{
-    color: var(--second-color);
-}
-
-.rodape .links i {
-    margin: 18px;
+@media screen and (max-width: 568px){
+    .title-generator h2 {
+        font-size: 18px;
+    }
+    .title-generator p {
+        font-size: 12px;
+    }
+    .area-generator {
+        width: 80%;
+    }
+    .password-generator h4{
+        font-size: 18px;
+    }
 }

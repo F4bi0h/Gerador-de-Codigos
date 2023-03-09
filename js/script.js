@@ -1,46 +1,96 @@
-class Informacoes {
-  constructor(name, email, senhaTipo) {
-    this.name = name;
-    this.email = email;
-    this.senhaTipo = senhaTipo;
-  }
+class GeneratorCode {
+    constructor() {
+        this.words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        this.characters = ['!', '@', '#', '$', '%', '¨', '&', '*', '(', ')', '-', '_', '+', '=', '/', '?', ',', '.'];
+        this.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+        // methods
+        this.getOptions();
+    }
+
+    shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    getOptions() {
+        let btn = document.querySelector('.btn-success');
+
+        btn.addEventListener('click', () => {
+            let optionWord = document.querySelector('#letras');
+            let optionNumber = document.querySelector('#numeros');
+            let optionCharacter = document.querySelector('#caracter');
+
+            this.shuffleArray(this.words);
+            this.shuffleArray(this.characters);
+            this.shuffleArray(this.numbers);
+
+            if (optionWord.checked === true && optionCharacter.checked === false && optionNumber.checked === false) {
+
+                document.querySelector('#my-password').value = this.words.slice(0, 8).join('');
+
+            }
+
+            if (optionWord.checked === false && optionCharacter.checked === true && optionNumber.checked === false) {
+
+                document.querySelector('#my-password').value = this.characters.slice(0, 8).join('');
+
+            }
+
+            if (optionWord.checked === false && optionCharacter.checked === false && optionNumber.checked === true) {
+
+                document.querySelector('#my-password').value = this.numbers.slice(0, 8).join('');
+
+            }
+
+            if (optionWord.checked === true && optionCharacter.checked === true && optionNumber.checked === false) {
+
+                let wordsAndCharacter = this.words.concat(this.characters);
+                this.shuffleArray(wordsAndCharacter);
+
+                document.querySelector('#my-password').value = wordsAndCharacter.slice(0, 8).join('');
+
+            }
+
+            if (optionWord.checked === true && optionCharacter.checked === false && optionNumber.checked === true) {
+
+                let wordsAndNumbers = this.words.concat(this.numbers);
+                this.shuffleArray(wordsAndNumbers);
+
+                document.querySelector('#my-password').value = wordsAndNumbers.slice(0, 8).join('');
+
+            }
+
+            if (optionWord.checked === false && optionCharacter.checked === true && optionNumber.checked === true) {
+
+                let characterAndNumber = this.characters.concat(this.numbers);
+                this.shuffleArray(characterAndNumber);
+
+                document.querySelector('#my-password').value = characterAndNumber.slice(0, 8).join('');
+
+            }
+
+            if (optionWord.checked === true && optionCharacter.checked === true && optionNumber.checked === true) {
+
+                let all = this.words.concat(this.numbers, this.characters);
+                this.shuffleArray(all);
+
+                document.querySelector('#my-password').value = all.slice(0, 8).join('');
+
+            }
+
+            if (optionWord.checked === false && optionCharacter.checked === false && optionNumber.checked === false) {
+
+                return alert('Preencha alguns dos campos.');
+
+            }
+        });
+    }
 
 }
 
-function gerarSenha() {
-  let name = document.getElementById('name');
-  let email = document.getElementById('email');
-  let senhaTipo = document.getElementById('tipo');
+let generatorCode = new GeneratorCode();
 
-  let infors = new Informacoes(
-    name.value,
-    email.value,
-    senhaTipo.value
-  );
-
-  switch (infors.senhaTipo) {
-    case '1': infors.senhaTipo = 'Email';
-      break;
-    case '2': infors.senhaTipo = 'Desktop';
-      break;
-    case '3': infors.senhaTipo = 'Cartão';
-      break;
-  }
-
-  if(name.value !== '' && email.value !== '' && senhaTipo.value !== '') {
-    console.log(infors);
-  } else {
-    alert('Algo deu errado! Verifique se todos os campos foram preenchidos.');
-  }
-
-}
-
-
-
-
-
-/*function gerarcodigo() {
-    document.getElementById('gerar-codigo').click(
-      document.getElementById('campo-codigo').value = Math.round(Math.random() * 8579)
-    )
-}*/
